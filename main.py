@@ -4,32 +4,32 @@ from sklearn.pipeline import make_pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 import joblib
 
-# Datos de entrenamiento (enfermedades y síntomas)
+# Enfermerdades y Sintomas
 sintomas = [
-    "fiebre,tos,dolor de garganta,congestión nasal",
+    "fiebre,tos,dolor de garganta,congestion nasal",
     "mucosidad nasal,dolor de garganta,estornudos",
     "fiebre,tos seca,dificultad para respirar,fatiga",
     "fiebre alta,tos con esputo,dificultad para respirar,dolor en el pecho",
     "dolor de cabeza,tos,fatiga",
-    "dolor muscular,fiebre,escalofríos",
-    "dolor abdominal,vómitos,diarrea",
-    "picazón,erupción roja,fiebre",
-    "dolor de garganta,escalofríos,fiebre",
+    "dolor muscular,fiebre,escalofrios",
+    "dolor abdominal,vomitos,diarrea",
+    "picazon,erupcion roja,fiebre",
+    "dolor de garganta,escalofrios,fiebre",
     "tos seca,dolor muscular,fatiga",
-    "fiebre,escalofríos,sudoración nocturna,pérdida de peso",
-    "dolor en el abdomen,náuseas,vómitos",
-    "dificultad para respirar,opresión en el pecho",
+    "fiebre,escalofrios,sudoracion nocturna,p perdidapérdida de peso",
+    "dolor en el abdomen,nauseas,vomitos",
+    "dificultad para respirar,opresion en el pecho",
     "fatiga,dificultad para concentrarse,irritabilidad",
-    "erupción en la piel,picazón,hinchazón",
+    "erupcion en la piel,picazon,hinchazon",
     "dolor en el pecho,disnea,tos con sangre",
-    "dolor de cabeza,secreción nasal,dolor en los senos nasales"
+    "dolor de cabeza,secrecion nasal,dolor en los senos nasales"
 ]
 
 enfermedades = [
     "Gripe",
     "Resfriado",
     "COVID-19",
-    "Neumonía",
+    "Neumonia",
     "Sinusitis",
     "Influenza",
     "Gastroenteritis",
@@ -40,7 +40,7 @@ enfermedades = [
     "Candidiasis",
     "Asma",
     "Dermatitis",
-    "Enfermedad Pulmonar Obstructiva Crónica (EPOC)",
+    "Enfermedad Pulmonar Obstructiva Cronica (EPOC)",
     "Hepatitis",
     "Celulitis"
 ]
@@ -62,9 +62,9 @@ def diagnosticar(sintomas_usuario):
 # Función principal para interactuar en la terminal
 def main():
     print("Sistema Experto de Diagnóstico de Enfermedades")
-    print("Ejemplos de síntomas: fiebre, tos, dolor de garganta, congestión nasal, etc.")
+    print("Ejemplos de sintomas: fiebre, tos, dolor de garganta, congestion nasal, etc.")
     while True:
-        sintomas_usuario = input("Ingrese los síntomas separados por coma (ej. fiebre,tos,dolor de garganta): ").strip()
+        sintomas_usuario = input("Ingrese los sintomas separados por coma (ej. fiebre,tos,dolor de garganta): ").strip()
         if sintomas_usuario.lower() in ["salir", "exit"]:
             break
         resultados = diagnosticar(sintomas_usuario)
@@ -72,7 +72,7 @@ def main():
             for enfermedad, probabilidad in resultados.items():
                 print(f'Probabilidad de {enfermedad}: {probabilidad * 100:.2f}%')
         else:
-            print("No se pudieron generar resultados. Verifica la entrada de síntomas.")
+            print("No se pudieron generar resultados. Verifica la entrada de sintomas.")
 
 if __name__ == "__main__":
     main()
